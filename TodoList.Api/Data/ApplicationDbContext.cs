@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore; // Required for DbContext and DbSet
-using TodoList.Models; // Required to reference ToDoItem
+using Microsoft.EntityFrameworkCore; 
+using TodoList.Models; 
 namespace TodoList.Api.Data
 {
     public class ApplicationDbContext : DbContext

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TodoList.Api.Controllers
 {
-    [Route("api/[controller]")] // Sets the base route to /api/ToDoItems
+    [Route("api/[controller]")] 
     [ApiController]
     public class ToDoItemsController : ControllerBase
     {
@@ -21,7 +21,6 @@ namespace TodoList.Api.Controllers
         }
 
         // GET (uncompleted): api/ToDoItems
-        // Rubric: Get request exists and returns all items that have no CompletedDate set. (2 points)
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ToDoItem>>> GetUncompletedToDoItems()
         {
@@ -31,7 +30,7 @@ namespace TodoList.Api.Controllers
         }
 
         // GET (by ID): api/ToDoItems/5
-        // Rubric: Get request exists and returns the proper set. (2 points)
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<ToDoItem>> GetToDoItemById(int id)
         {
@@ -46,7 +45,6 @@ namespace TodoList.Api.Controllers
         }
 
         // POST: api/ToDoItems
-        // Rubric: Post request exists adds item. (2 points)
         [HttpPost]
         public async Task<ActionResult<ToDoItem>> CreateToDoItem(ToDoItem toDoItem)
         {
@@ -57,7 +55,6 @@ namespace TodoList.Api.Controllers
         }
 
         // PUT: api/ToDoItems/5/complete
-        // Rubric: Put request exists and updates item. (2 points)
         [HttpPut("{id}/complete")]
         public async Task<IActionResult> MarkToDoItemComplete(int id)
         {
@@ -72,7 +69,7 @@ namespace TodoList.Api.Controllers
 
             await _context.SaveChangesAsync();
 
-            return NoContent(); // HTTP 204 No Content signifies success
+            return NoContent(); // HTTP 204 No Content 
         }
     }
 }
